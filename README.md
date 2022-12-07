@@ -9,4 +9,4 @@
   
 2. figure out card names and effects
   
-3. add some sort of ai to play the player
+3. Create an ai to play the player
