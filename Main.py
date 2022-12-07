@@ -5,7 +5,7 @@ def shop(gold):
     level=random.randint(1,3)
     inventory=[]
     cards=[]
-    print(level)
+    print("your level is :",level)
     if level>=1:
         cards=["attack","defend","heal"]
     if level>=2:
@@ -41,4 +41,6 @@ if restart=="yes":
     gold=100-x
     x+=10
     shop(gold)
+
+
 
