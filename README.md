@@ -1,7 +1,7 @@
 # card-game
 <div align="center">
   
-  <b> This is a projuct done in python with the end goal of having a working game </b>
+  <b> This project is in python and is stillin the making </b>
 
   <h1> goals </h1>
   
