@@ -1,7 +1,7 @@
 # card-game
 <div align="center">
   
-  This is a projuct done in python with the end goal of having a working game 
+  <b> This is a projuct done in python with the end goal of having a working game </b>
 
   <h1> goals </h1>
   
