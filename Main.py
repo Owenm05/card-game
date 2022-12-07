@@ -34,6 +34,9 @@ def shop(gold):
              
       else:
            print("no such card")
+def combat():
+    for x in inventory:
+        print(x)
 shop(100)
 restart=input("continue?")
 if restart=="yes":
@@ -41,6 +44,6 @@ if restart=="yes":
     gold=100-x
     x+=10
     shop(gold)
-
-
+if restart=="no":
+    combat()
 
