@@ -2,7 +2,7 @@ import random
 attack = {
   "damage": 5,
   "cost": 1,
-  "flavor": swing your sword
+  "flavor": "you swing your sword"
 }
 def shop(gold):
     print("welcome to my shop would you like to buy anything")
@@ -40,11 +40,15 @@ def shop(gold):
              
       else:
            print("no such card")
+    if answer=="no":
+      combat()
 def combat():
     print("your cards include:")
     for x in inventory:
         print(x)
-    hand=random.randint(1,len(inventory))
+    hand=[]
+    hand.append(inventory[random.randint(1,(len(inventory)-1))])
+    print(hand)
 shop(100)
 restart=input("continue?")
 if restart=="yes":
