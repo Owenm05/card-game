@@ -1,9 +1,15 @@
 import random
+attack = {
+  "damage": 5,
+  "cost": 1,
+  "flavor": swing your sword
+}
 def shop(gold):
     print("welcome to my shop would you like to buy anything")
     #gold = 100
     level=random.randint(1,3)
-    inventory=[]
+    global inventory
+    inventory=["attack","defend"]
     cards=[]
     print("your level is :",level)
     if level>=1:
@@ -35,8 +41,10 @@ def shop(gold):
       else:
            print("no such card")
 def combat():
+    print("your cards include:")
     for x in inventory:
         print(x)
+    hand=random.randint(1,len(inventory))
 shop(100)
 restart=input("continue?")
 if restart=="yes":
@@ -46,4 +54,3 @@ if restart=="yes":
     shop(gold)
 if restart=="no":
     combat()
-
