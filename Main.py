@@ -92,6 +92,30 @@ smite = {
     "damage":25,
     "cost":1,
     "flavor":"they all shall pay"
+import random
+class Game:
+  def __init__(self,enemyHp,level,gold,playerHp,block):
+    self.enemyHp=enemyHp
+    self.level=level
+    self.gold=gold
+    self.playerHp=playerHp
+    self.block=block
+if __name__ == "__main__":
+    game= Game(50,1,100,50,0)
+attack = {
+  "damage": 5,
+  "cost": 1,
+  "flavor": "you swing your sword"
+}
+smite = {
+    "damage":25,
+    "cost":1,
+    "flavor":"they all shall pay"
+}
+defend = {
+    "block":10,
+    "cost":1,
+    "flavor":"you raise your shield"
 }
 def shop(gold):
     global game
@@ -136,13 +160,21 @@ def combat():
         print(x)
     hand=[]
     i=0
-    while(i<=4):
-      hand.append(inventory[random.randint(1,(len(inventory)-1))])
-      i+=1
+    if(len(inventory)>=5):
+      while(i<=5):
+        hand.append(inventory[random.randint(0,(len(inventory)-1))])
+        i+=1
+    if(len(inventory)<5):
+      while(i<=len(inventory)):
+        hand.append(inventory[random.randint(0,(len(inventory)-1))])
+        i+=1
     print(hand)
     move=input("what card do you want to play?")
     if(move == "attack"):
       damage(attack["damage"])
+    if(move == "smite"):
+      damage(smite["damage"])
+    
       
 def damage(damage):
   global game
