@@ -1,4 +1,5 @@
 import random
+enemyhp=100
 attack = {
   "damage": 5,
   "cost": 1,
@@ -52,6 +53,15 @@ def combat():
       hand.append(inventory[random.randint(1,(len(inventory)-1))])
       i+=1
     print(hand)
+    move=input("what card do you want to play?")
+    if(move == "attack"):
+      damage(attack["damage"])
+      
+def damage(damage):
+  enemyHp=100
+  enemyHp-=damage
+  print(enemyHp)
+  combat()
 shop(100)
 restart=input("continue?")
 if restart=="yes":
