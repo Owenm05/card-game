@@ -75,15 +75,41 @@ def damage(damage):
   combat()
 shop(100)
 restart=input("continue?")
-if restart=="yes":
-    x=10
-    gold=100-x
-    x+=10
-    shop(gold)
-if restart=="no":
-    combat()
-
-
+import random
+class Game:
+  def __init__(self,enemyHp,level,gold):
+    self.enemyHp=enemyHp
+    self.level=level
+    self.gold=gold
+if __name__ == "__main__":
+    game= Game(50,random.randint(1,3),100)
+attack = {
+  "damage": 5,
+  "cost": 1,
+  "flavor": "you swing your sword"
+}
+smite = {
+    "damage":25,
+    "cost":1,
+    "flavor":"they all shall pay"
+}
+def shop(gold):
+    global game
+    print("welcome to my shop would you like to buy anything")
+    global inventory
+    inventory=["attack","defend"]
+    cards=[]
+    print("your level is :",game.level)
+    if game.level>=1:
+        cards=["attack","defend","heal"]
+    if game.level>=2:
+        cards.append("curse")
+        cards.append("sacrifice")
+    if game.level==3:
+        cards.append("smite")
+    answer = input()
+    if answer == "yes":
+      print("we have these cards:")
       for x in cards:
           print(x)
       print("what would you like to buy",cards)
