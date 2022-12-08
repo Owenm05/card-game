@@ -6,6 +6,7 @@ class Game:
     self.gold=gold
     self.playerHp=playerHp
     self.block=block
+    self.currentHp=self.playerHp
 if __name__ == "__main__":
     game= Game(50,1,100,50,0)
 attack = {
@@ -87,8 +88,16 @@ def combat():
 def turn(damage,block):
   global game
   game.block+=block
-  print("your remaining block is:",game.block)
+  hit=5
+  game.block-=hit
+  if((game.currentHp+game.block)<=game.playerHp):
+    game.currentHp+=game.block
+  elif((game.currentHp+game.block)>game.playerHp):
+    game.currentHp=game.playerHp
+  print("Your remaining hp is:",game.currentHp)
   game.enemyHp -= damage
+  game.block=0
+  print("your remaining block is:",game.block)
   print("your opponent has:",game.enemyHp,"hp left")
   combat()
 shop(100)
@@ -100,4 +109,3 @@ if restart=="yes":
     shop(gold)
 if restart=="no":
     combat()
-
