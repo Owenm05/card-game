@@ -47,7 +47,10 @@ def combat():
     for x in inventory:
         print(x)
     hand=[]
-    hand.append(inventory[random.randint(1,(len(inventory)-1))])
+    i=0
+    while(i<=4):
+      hand.append(inventory[random.randint(1,(len(inventory)-1))])
+      i+=1
     print(hand)
 shop(100)
 restart=input("continue?")
